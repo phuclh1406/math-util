@@ -23,16 +23,35 @@ public class MathUtil {
     //giai thừa hàm đồ thị dốc, tăng nhanh về giá trị
     //20 giai thừa 18 con số 0, vừa kịp đủ cho kiểu long của Java
     //bài này quy ước tính n! trong khoảng từ 0..20
+//    public static long getFactorial(int n){
+//        if (n < 0 || n > 20)
+//            throw new IllegalArgumentException("Invalid argument. N must be between 0..20");
+//        
+//        if (n == 0 || n == 1)
+//            return 1; //kết thúc cuộc chơi sớm nếu nhận những đầu vào đặt biệt
+//        
+//        long product = 1; //tích nhân dồn
+//        for (int i = 2; i <= n; i++) 
+//            product *= i;
+//        return product;
+//    }
+    
+    //Hiện tượng gọi lại chính mình với 1 quy mô khác gọi là đệ quy - RECURSION
+    //Ví dụ: con búp bê Nga, giống nhau và lồng trong nhau
+    
+    //Tính 6!
+    //n! = 1.2.3.4.5.6. ... .n
+    //6! = 6. 5!
+    //5! = 5. 4!
+    
+    //Muốn tính n! lấy n * (n - 1)!
     public static long getFactorial(int n){
         if (n < 0 || n > 20)
             throw new IllegalArgumentException("Invalid argument. N must be between 0..20");
         
         if (n == 0 || n == 1)
             return 1; //kết thúc cuộc chơi sớm nếu nhận những đầu vào đặt biệt
-        
-        long product = 1; //tích nhân dồn
-        for (int i = 2; i <= n; i++) 
-            product *= i;
-        return product;
+
+        return n * (getFactorial(n - 1));
     }
 }
