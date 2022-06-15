@@ -8,7 +8,6 @@ package com.phucle.mathutil.test.core;
 import com.phucle.mathutil.core.MathUtil;
 import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
